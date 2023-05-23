@@ -6,12 +6,14 @@ import {
   ElementPlusResolver,
   AntDesignVueResolver,
 } from 'unplugin-vue-components/resolvers'
-import path, { resolve } from 'path'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    vueJsx(),
     AutoImport({
       dts: true,
       imports: ['vue', 'pinia'],

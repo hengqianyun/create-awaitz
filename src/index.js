@@ -188,7 +188,7 @@ try {
 
   const templateDir = path.resolve(
     fileURLToPath(import.meta.url),
-    '../template/',
+    '../../template/',
     `template-${template}`,
   )
 

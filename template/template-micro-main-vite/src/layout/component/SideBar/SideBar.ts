@@ -1,12 +1,12 @@
 import { useRouter, useRoute } from 'vue-router'
 import microApp from '@micro-zoe/micro-app'
-import { APP_NAMES, RouterSingleMenu, useUserStore } from '@/store/menu'
+import { APP_NAMES, RouterSingleMenu, usePermissionStore } from '@/store/menu'
 // import { MenuProps } from 'ant-design-vue'
 
 export default function () {
   const router = useRouter()
   const route = useRoute()
-  const permissionStore = useUserStore()
+  const permissionStore = usePermissionStore()
   let appName: APP_NAMES = 'main-app'
 
   const selectedKeys = ref<string[]>(['1'])

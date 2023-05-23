@@ -45,7 +45,7 @@ export class RouterMainMenu extends RouterMenu implements IRouterMainMenu {
   }
 }
 
-export const useUserStore = defineStore(
+export const usePermissionStore = defineStore(
   'permission',
   () => {
     const menus: Array<RouterSingleMenu | RouterMainMenu> = []

@@ -17,13 +17,15 @@ export default defineConfig({
     AutoImport({
       dts: true,
       imports: ['vue', 'pinia'],
-      resolvers: [ElementPlusResolver(), AntDesignVueResolver()],
+      resolvers: [ElementPlusResolver(), AntDesignVueResolver({ importStyle: 'less' })],
       eslintrc: {
         enabled: true,
       },
     }),
     Components({
-      resolvers: [ElementPlusResolver(), AntDesignVueResolver()],
+      dts: true,
+      include: ['./src/**/*.{js,jsx,ts,tsx,vue,html}'],
+      resolvers: [ElementPlusResolver(), AntDesignVueResolver({ importStyle: 'less' })],
     }),
   ],
   resolve: {
@@ -31,8 +33,8 @@ export default defineConfig({
       '@': path.resolve('./src'),
     },
   },
+  // base: '/manager-child/goods/',  // 填写服务器地址
   server: {
-    host: '0.0.0.0',
     port: 3101,
     open: true,
     https: false,

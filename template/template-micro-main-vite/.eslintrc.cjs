@@ -26,6 +26,9 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint', 'prettier'],
   rules: {
     'vue/multi-word-component-names': 'off',
+    'vue/require-valid-default-prop': 'off', // ts版本大于4.7可关闭
+    'vue/require-explicit-emits': 'off',
+    '@typescript-eslint/no-empty-interface': 0, // 允许空的接口
     '@typescript-eslint/no-this-alias': [
       'error',
       {
@@ -33,12 +36,5 @@ module.exports = {
       },
     ],
     'no-debugger': 'warn',
-    'no-console': [
-      // 提交时不允许log
-      'warn',
-      {
-        allow: ['warn', 'error'],
-      },
-    ],
   },
 }
